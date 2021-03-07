@@ -4,7 +4,7 @@
 The project is a proof of concept application that allows users to budget how much they need to save to make a down payment on a property. Application collects user inputs such as principal amount, term of loan, and expected interest rate. To help to plan their savings the users are offered two additional fields: field with $ amount for how much they can set aside monthly, and a slider that allows to set how many months they are willing to save before they put the down payment. 
 
 <p align="center">
-  <img width="500" src="https://i.ibb.co/z80Ym6Q/Screen-Shot-2021-03-07-at-2-47-40-PM.png" alt="Mortgage Calculator">
+  <img width="900" src="https://i.ibb.co/z80Ym6Q/Screen-Shot-2021-03-07-at-2-47-40-PM.png" alt="Mortgage Calculator">
 </p>
 
 ## Constraints
@@ -16,13 +16,13 @@ are stubbed in the service layer of the app.
 
 Default interest rate in the form field is populated based on the hardcoded value for the federal interest of `0.25%` plus the `2.5%`.
 
-By clicking the "Calculate Monthly Payments" button users will be able to see the client-side calculated value based on the formula:
+By clicking the "Calculate Monthly Payments" button users will be able to see the client-side calculated value based on the formula:<br>
 `M = P [ i(1 + i)^n ] / [ (1 + i)^n – 1]`.
 
-Where
-`P` = Principal amount (the total amount borrowed),
-`i` = Monthly interest rate on the mortgage,
-`n` = Number of months (term of the mortgage).
+Where<br>
+`P` = Principal amount (the total amount borrowed),<br>
+`i` = Monthly interest rate on the mortgage,<br>
+`n` = Number of months (term of the mortgage).<br>
 
 
 ## Implementation Details
@@ -53,6 +53,18 @@ Run the development server:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
+## Generating assets and deployment
+
+Ideal deployment solution for Next.JS application would be Vercel cloud platform, as it takes care about the most of the CI/CD troubles in the initial stage of application growth and provides zero config deployments.
+
+Vercel connects directly to Github repository, listens to `push` commands on a configured branches and automatically builds and deploys applications to either staging server or to production.
+
+Find the deployed to Vercel version of the **Mortgage Monthly Payments Calculator** by the link - https://payments-calculator.vercel.app/
+
+If a different cloud platform is used, find the instructions on how to deploy generated assets and launch the app under those conditions.
+
+1) To generate assets follow the guide (e.g. for NodeJS server) https://nextjs.org/docs/deployment#other-hosting-options
+2) For more fine tuning - https://nextjs.org/docs/advanced-features/custom-server
 

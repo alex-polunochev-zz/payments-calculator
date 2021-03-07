@@ -1,6 +1,6 @@
 import axiosLib from 'axios';
 
-const host = 'https://api.meettally.com'; // process.env.NEXT_PUBLIC_API_HOST;
+const host = 'https://api.meettally.com'; // get API host from ENV variable
 
 let axios;
 
@@ -31,7 +31,8 @@ const sendPost = async (path, params) => {
 
 // XHR stubs
 export const getInterestRate = () => {
-  return Promise.resolve(0.25);
+  // set default interest rate to federal interest + 2.5%
+  return Promise.resolve(0.25 + 2.5);
   // return sendGet('/federal-rate');
 };
 

@@ -9,11 +9,15 @@ The project is a proof of concept application that allows users to budget how mu
 
 ## Constraints
 
-Project doesn't currently have API support and all the interactions with the server, which are fetching the current federal interest rate and letting the server to return the calculated monthly payments, are stubbed in the service layer of the app.
+Project doesn't currently have API support and all the interactions with the server, which are:
+- fetching the current federal interest rate;
+- letting the server to return the calculated monthly payments; 
+are stubbed in the service layer of the app.
 
 Default interest rate in the form field is populated based on the hardcoded value for the federal interest of `0.25%` plus the `2.5%`.
 
-By clicking the "Calculate Monthly Payments" button users will be able to see the client-side calculated value based on the formula `M = P [ i(1 + i)^n ] / [ (1 + i)^n – 1]`.
+By clicking the "Calculate Monthly Payments" button users will be able to see the client-side calculated value based on the formula:
+`M = P [ i(1 + i)^n ] / [ (1 + i)^n – 1]`.
 
 Where
 `P` = Principal amount (the total amount borrowed),

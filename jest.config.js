@@ -1,6 +1,7 @@
 module.exports = {
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   globalSetup: '<rootDir>/test/helpers/setupEnv.js',
+  setupFilesAfterEnv: ['<rootDir>/test/helpers/setupTests.js'],
   transform: {
     '^.+\\.(js|jsx)$': 'babel-jest',
     '^(?!.*\\.(js|jsx|css|json)$)': '<rootDir>/test/helpers/fileTransformer.js'

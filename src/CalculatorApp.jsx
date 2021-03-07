@@ -136,7 +136,7 @@ export const CalculatorApp = () => {
 
   const updateState = (name, value) => {
     setInputValues({
-      ...inputs,
+      ...inputValues,
       [name]: value
     });
   };
@@ -151,7 +151,7 @@ export const CalculatorApp = () => {
 
   const handleFormSubmit = async () => {
     try {
-      const monthlyPayment = await getMonthlyPayment(inputs);
+      const monthlyPayment = await getMonthlyPayment(inputValues);
       setMonthlyPayment(monthlyPayment);
 
       // scroll few px down to see the result when user clicks Submit button that's located right at the bottom edge
@@ -180,14 +180,15 @@ export const CalculatorApp = () => {
           variant="outlined"
         />
         <StyledFormControl variant="outlined">
-          <InputLabel id="downpayment-saving-period-label">Mortgage Term</InputLabel>
+          <InputLabel id="mortgage-term-label">Mortgage Term</InputLabel>
           <Select
-            labelId="downpayment-saving-period-label"
-            id="downpayment-saving-period"
+            labelId="mortgage-term-label"
+            id="mortgage-term"
             value={inputValues.term}
             name="term"
             onChange={handleTextInputChange}
-            label="Mortgage Term">
+            label="Mortgage Term"
+            data-testid="term-select">
             <MenuItem value={10}>10 yrs</MenuItem>
             <MenuItem value={15}>15 yrs</MenuItem>
             <MenuItem value={20}>20 yrs</MenuItem>

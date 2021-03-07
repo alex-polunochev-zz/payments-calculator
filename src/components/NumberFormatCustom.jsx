@@ -5,5 +5,5 @@ export const NumberFormatPrice = (props) => {
 };
 
 export const NumberFormatPercentage = (props) => {
-  return <NumberFormatWithPrefix prefix="%" {...props} />;
+  return <NumberFormatWithPrefix suffix="%" {...props} />;
 };

@@ -91,7 +91,6 @@ export const SavingPeriodSlider = (props) => {
       onChange={handleSliderChange}
       getAriaValueText={savePeriodValueFormat}
       valueLabelFormat={savePeriodValueFormat}
-      aria-labelledby="savePeriodLabel"
       valueLabelDisplay="on"
       step={1}
       marks={sliderTicks(isShrink)}

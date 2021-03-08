@@ -20,7 +20,7 @@ export const NumberFormatWithPrefix = (props) => {
       isNumericString
       allowNegative={false}
       decimalScale={2}
-      allowEmptyFormatting={true}
+      allowEmptyFormatting={false}
       prefix={prefix}
       suffix={suffix}
     />

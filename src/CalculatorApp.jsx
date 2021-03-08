@@ -126,6 +126,10 @@ export const CalculatorApp = () => {
   }, []);
 
   const [monthlyPayment, setMonthlyPayment] = useState();
+  const [errors, setErrors] = useState({
+    rate: false,
+    principal: false
+  });
   const [inputValues, setInputValues] = useState({
     rate: 0,
     principal: 100000,
@@ -147,9 +151,15 @@ export const CalculatorApp = () => {
 
   const handleTextInputChange = (event) => {
     updateState(event.target.name, event.target.value);
+    if (['principal', 'rate'].includes(event.target.name)) {
+      setErrors({ ...errors, [event.target.name]: false });
+    }
   };
 
   const handleFormSubmit = async () => {
+    const { rate, principal } = inputValues;
+    setErrors({ rate: !rate, principal: !principal });
+
     try {
       const monthlyPayment = await getMonthlyPayment(inputValues);
       setMonthlyPayment(monthlyPayment);
@@ -178,6 +188,8 @@ export const CalculatorApp = () => {
             inputComponent: NumberFormatPrice
           }}
           variant="outlined"
+          error={errors.principal}
+          helperText={errors.principal && 'Incorrect entry.'}
         />
         <StyledFormControl variant="outlined">
           <InputLabel id="mortgage-term-label">Mortgage Term</InputLabel>
@@ -206,6 +218,8 @@ export const CalculatorApp = () => {
             inputComponent: NumberFormatPercentage
           }}
           variant="outlined"
+          error={errors.rate}
+          helperText={errors.rate && 'Incorrect entry.'}
         />
         <Typography variant="body1" gutterBottom paragraph>
           How much can you set aside a month for a down payment?

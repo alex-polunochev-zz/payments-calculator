@@ -33,9 +33,7 @@ This is a [Next.js](https://nextjs.org/)-based project bootstrapped with [`creat
 Due to the freedom of choice for platform and tools, Next.js was selected along with [`Material-UI`](https://github.com/mui-org/material-ui/) and [`Styled Components`](https://github.com/styled-components/styled-components) for app implementation.
 Material-UI offers React components for faster and easier web development, including variety of form input components. Material-UI was also chosen simply because it's cool and popular, and author wanted to learn a new technology while working on this PoC app.
 
-During the process of the implementation it was revealed that the combination of Material-UI, Styled Components and Next.js (its server side rendering in particular) is not the most optimal solution for a quick PoC, as the way how stylesheets are delivered to client for this set requires a sophisticated configuration (see `/pages/_document.js` for one part of it). Moreover there were observed conflicts of specificity order for CSS between Styled Components and Material-UI, which additionally complicated and delayed development process.
-
-Assuming the findings, the recommendation would be to not use the selected UI libraries in combination with SSR. For a quick PoC the fully client side rendered app, e.g. based on React Create App, could be chosen as a bootstrap alternative.
+During the process of the implementation it was revealed that the combination of Material-UI, Styled Components and Next.js (its server side rendering in particular) might not be the best solution for a quick PoC, as the way how stylesheets are delivered to client for this set requires a few configuration workarounds (see `/pages/_document.js` for one part of it). Moreover there were observed conflicts of specificity order for CSS between Styled Components and Material-UI, which additionally delayed the development process by debugging the related APIs interoperability.
 ## Running the application in development mode
 
 Application can be downloaded as ZIP archive or cloned with `git`.

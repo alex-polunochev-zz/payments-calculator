@@ -68,3 +68,18 @@ If a different cloud platform is used, find the instructions on how to deploy ge
 1) To generate assets follow the guide (e.g. for NodeJS server) https://nextjs.org/docs/deployment#other-hosting-options
 2) For more fine tuning - https://nextjs.org/docs/advanced-features/custom-server
 
+## Testing
+
+Application has the basic testing coverage for the interest of time implemented with a few unit test cases only. Testing infrastructure includes [`React Testing Library`](https://testing-library.com/) and [`Jest`](https://jestjs.io/en/) runner.
+If end to end test were to be implemented, the [`Cypress`](https://www.cypress.io/) framework would be a tool of choice for the app PoC.
+
+Test suite can be launched using `npm` command
+```bash
+npm run test
+```
+
+or if `jest` is installed globally directly via 
+```bash
+jest
+```
+

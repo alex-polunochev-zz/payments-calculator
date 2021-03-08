@@ -24,6 +24,7 @@ Where<br>
 `i` = Monthly interest rate on the mortgage,<br>
 `n` = Number of months (term of the mortgage).<br>
 
+This is a simplistic formula that is based on a fixed constant rate during the whole term, but it allows to get the general idea of costs over the chosen period. For example it doesn't count in a particular loan term and additional payments associated with property ownership. This formula, for the sake of PoC, was sourced from https://en.wikipedia.org/wiki/Mortgage_calculator#Monthly_payment_formula and was also found on other related resources.
 
 ## Implementation Details
 

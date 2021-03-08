@@ -78,8 +78,16 @@ Test suite can be launched using `npm` command
 npm run test
 ```
 
-or if `jest` is installed globally directly via 
+or if `jest` is installed globally, then directly via 
 ```bash
 jest
 ```
 
+Current list of scenarios includes:
+```
+ PASS  test/src/CalculatorApp.test.js
+  CalculatorApp
+    ✓ renders without crash (332 ms)
+    ✓ calculates monthly payment based on default input values (172 ms)
+    ✓ calculates monthly payment for updated principal (169 ms)
+```

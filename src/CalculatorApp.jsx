@@ -6,7 +6,6 @@ import {
   FormControl,
   InputLabel,
   MenuItem,
-  Slider,
   Typography,
   Button
 } from '@material-ui/core';
